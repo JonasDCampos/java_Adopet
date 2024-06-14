@@ -12,7 +12,7 @@ public class ImportarPetsCommand implements Command {
             ClientHttpConfiguration client = new ClientHttpConfiguration();
             PetService petService = new PetService(client);
 
-            petService.listarPetsDoAbrigo();
+            petService.importarPetsDoAbrigo();
         } catch (IOException | InterruptedException e) {
             System.out.println(e.getMessage());
         }
