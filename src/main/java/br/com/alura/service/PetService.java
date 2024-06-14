@@ -16,8 +16,8 @@ public class PetService {
 
     private ClientHttpConfiguration client;
 
-    public PetService(ClientHttpConfiguration cliente){
-        this.client = cliente;
+    public PetService(ClientHttpConfiguration client) {
+        this.client = client;
     }
 
     public void listarPetsDoAbrigo() throws IOException, InterruptedException {

@@ -15,8 +15,8 @@ public class AbrigoService {
 
     private ClientHttpConfiguration client;
 
-    public AbrigoService(ClientHttpConfiguration cliente){
-        this.client = cliente;
+    public AbrigoService(ClientHttpConfiguration client) {
+        this.client = client;
     }
 
     public void listarAbrigo() throws IOException, InterruptedException {
