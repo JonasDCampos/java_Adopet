@@ -3,7 +3,10 @@ package br.com.alura.service;
 import br.com.alura.client.ClientHttpConfiguration;
 import br.com.alura.domain.Abrigo;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import java.io.IOException;
 import java.net.http.HttpResponse;
@@ -20,14 +23,11 @@ public class AbrigoService {
     }
 
     public void listarAbrigo() throws IOException, InterruptedException {
-
         String uri = "http://localhost:8080/abrigos";
         HttpResponse<String> response = client.dispararRequisicaoGet(uri);
-
         String responseBody = response.body();
         Abrigo[] abrigos = new ObjectMapper().readValue(responseBody, Abrigo[].class);
         List<Abrigo> abrigoList = Arrays.stream(abrigos).toList();
-
         System.out.println("Abrigos cadastrados:");
         for (Abrigo abrigo : abrigoList) {
             long id = abrigo.getId();
@@ -48,7 +48,6 @@ public class AbrigoService {
 
         String uri = "http://localhost:8080/abrigos";
         HttpResponse<String> response = client.dispararRequisicaoPost(uri, abrigo);
-
         int statusCode = response.statusCode();
         String responseBody = response.body();
         if (statusCode == 200) {

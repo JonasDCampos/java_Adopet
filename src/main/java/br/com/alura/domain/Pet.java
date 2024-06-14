@@ -27,16 +27,16 @@ public class Pet {
         return id;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
     public String getNome() {
         return nome;
     }
 
     public String getRaca() {
         return raca;
+    }
+
+    public String getTipo() {
+        return tipo;
     }
 
     public int getIdade() {

@@ -12,8 +12,11 @@ public class ClientHttpConfiguration {
 
     public HttpResponse<String> dispararRequisicaoGet(String uri) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder().uri(URI.create(uri)).method("GET", HttpRequest.BodyPublishers.noBody()).build();
 
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(uri))
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
         return client.send(request, HttpResponse.BodyHandlers.ofString());
     }
 
