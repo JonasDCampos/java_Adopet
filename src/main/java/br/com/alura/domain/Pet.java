@@ -43,11 +43,11 @@ public class Pet {
         return idade;
     }
 
-    public Float getPeso() {
-        return peso;
-    }
-
     public String getCor() {
         return cor;
+    }
+
+    public Float getPeso() {
+        return peso;
     }
 }
